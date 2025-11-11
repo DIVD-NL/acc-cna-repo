@@ -28,8 +28,8 @@ jobs:
           path              : records                                       # This is where the CVE records live
           reservations-path : records/reservations
           ignore            : "vendor-advisory"                             # We don't always need a vendor advisory
-          min-reserved      : 10                                            # Keep at least 10 reserved records (for the current year)
-          reserve           : 10                                            # Reserve a minimum of 10 records at a time 
+          min-reserved      : 0                                             # Don't pre-reserve IDs
+          reserve           : 0                                             # Don't pre-reserve IDs
           pr                : ${{ github.event_name != 'pull_request' }}    # Do pull requests when mergin into main
           github-token      : ${{ secrets.GH_TOKEN }}                       # Use a personal access token
           expire-after      : 1y                                            # Expire reservations 1 year after the year ends
